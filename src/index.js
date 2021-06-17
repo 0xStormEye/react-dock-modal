@@ -103,6 +103,7 @@ const DockModal = (props) => {
         position='bottom'
         isVisible={isVisible}
         fluid
+        dimMode='none'
         size={0.6}
         dockStyle={dockStyles}
       >
@@ -141,6 +142,7 @@ const DockModal = (props) => {
         position='bottom'
         isVisible={isVisible}
         fluid
+        dimMode='none'
         size={0.05}
         dockStyle={minDockStyles}
       >
