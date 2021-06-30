@@ -128,10 +128,10 @@ const DockModal = (props) => {
               className={styles.dmPointer}
               onClick={(e) => setType('modal')}
             /> */}
-            <MdClose
+            {/* <MdClose
               className={styles.dmPointer}
               onClick={(e) => toggleVisibility(false)}
-            />
+            /> */}
           </Col>
         </Row>
         <div className='m-1'>{children}</div>
@@ -167,10 +167,10 @@ const DockModal = (props) => {
               className={styles.dmPointer}
               onClick={(e) => setType('modal')}
             /> */}
-            <MdClose
+            {/* <MdClose
               className={styles.dmPointer}
               onClick={(e) => toggleVisibility(false)}
-            />
+            /> */}
           </Col>
         </Row>
         <div hidden>{children}</div>
