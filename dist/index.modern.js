@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Modal, ModalBody } from 'reactstrap';
 import Dock from 'react-dock';
-import { FaRegWindowMinimize, FaWindowMaximize } from 'react-icons/fa';
+import { FaRegWindowMinimize } from 'react-icons/fa';
 import { MdClose } from 'react-icons/md';
 import { FiMaximize2 } from 'react-icons/fi';
 import { BsBoxArrowInDown } from 'react-icons/bs';
@@ -123,16 +123,6 @@ var DockModal = function DockModal(props) {
       onClick: function onClick(e) {
         return setType('minim');
       }
-    }), /*#__PURE__*/React.createElement(FaWindowMaximize, {
-      className: styles.dmPointer,
-      onClick: function onClick(e) {
-        return setType('modal');
-      }
-    }), /*#__PURE__*/React.createElement(MdClose, {
-      className: styles.dmPointer,
-      onClick: function onClick(e) {
-        return toggleVisibility(false);
-      }
     }))), /*#__PURE__*/React.createElement("div", {
       className: "m-1"
     }, children));
@@ -164,16 +154,6 @@ var DockModal = function DockModal(props) {
       className: styles.dmPointer,
       onClick: function onClick(e) {
         return setType('dock');
-      }
-    }), /*#__PURE__*/React.createElement(FaWindowMaximize, {
-      className: styles.dmPointer,
-      onClick: function onClick(e) {
-        return setType('modal');
-      }
-    }), /*#__PURE__*/React.createElement(MdClose, {
-      className: styles.dmPointer,
-      onClick: function onClick(e) {
-        return toggleVisibility(false);
       }
     }))), /*#__PURE__*/React.createElement("div", {
       hidden: true

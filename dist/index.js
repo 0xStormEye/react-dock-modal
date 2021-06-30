@@ -126,16 +126,6 @@ var DockModal = function DockModal(props) {
       onClick: function onClick(e) {
         return setType('minim');
       }
-    }), /*#__PURE__*/React__default.createElement(fa.FaWindowMaximize, {
-      className: styles.dmPointer,
-      onClick: function onClick(e) {
-        return setType('modal');
-      }
-    }), /*#__PURE__*/React__default.createElement(md.MdClose, {
-      className: styles.dmPointer,
-      onClick: function onClick(e) {
-        return toggleVisibility(false);
-      }
     }))), /*#__PURE__*/React__default.createElement("div", {
       className: "m-1"
     }, children));
@@ -167,16 +157,6 @@ var DockModal = function DockModal(props) {
       className: styles.dmPointer,
       onClick: function onClick(e) {
         return setType('dock');
-      }
-    }), /*#__PURE__*/React__default.createElement(fa.FaWindowMaximize, {
-      className: styles.dmPointer,
-      onClick: function onClick(e) {
-        return setType('modal');
-      }
-    }), /*#__PURE__*/React__default.createElement(md.MdClose, {
-      className: styles.dmPointer,
-      onClick: function onClick(e) {
-        return toggleVisibility(false);
       }
     }))), /*#__PURE__*/React__default.createElement("div", {
       hidden: true
