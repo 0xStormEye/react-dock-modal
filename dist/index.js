@@ -11,7 +11,7 @@ var fi = require('react-icons/fi');
 var bs = require('react-icons/bs');
 var reactDeviceDetect = require('react-device-detect');
 
-var styles = {"dmPointer":"_30XxJ","dmFill":"_2SuDt"};
+var styles = {"dmPointer":"_styles-module__dmPointer__30XxJ","dmFill":"_styles-module__dmFill__2SuDt"};
 
 var DockModal = function DockModal(props) {
   var initalType = props.initalType,
