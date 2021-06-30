@@ -13,7 +13,6 @@ const DockModal = (props) => {
   const {
     initalType,
     headerName,
-    visible,
     bgcolor,
     fgcolor,
     fweight,
@@ -21,7 +20,7 @@ const DockModal = (props) => {
     params
   } = props
   const [type, setType] = useState(initalType)
-  const [isVisible, toggleVisibility] = useState(visible)
+  const [isVisible, toggleVisibility] = useState(true)
 
   // Header Style
   const headerStyle = {
@@ -36,8 +35,6 @@ const DockModal = (props) => {
   let minimDockHeight = '10%'
   let defaultModalWidth = '70%'
   let defaultModalHeight = '650px'
-  let defaultdockPosX = '10px'
-  let defaultdockPosY = '5px'
 
   if (params) {
     const {
@@ -47,8 +44,6 @@ const DockModal = (props) => {
       minimHeight,
       modalWidth,
       modalHeight,
-      dockPosX,
-      dockPosY
     } = params
     desktopDockWidth = dockWidth || desktopDockWidth
     desktopDockHeight = dockHeight || desktopDockHeight
@@ -56,8 +51,6 @@ const DockModal = (props) => {
     minimDockHeight = minimHeight || minimDockHeight
     defaultModalWidth = modalWidth || defaultModalWidth
     defaultModalHeight = modalHeight || defaultModalHeight
-    defaultdockPosX = dockPosX || defaultdockPosX
-    defaultdockPosY = dockPosY || defaultdockPosY
 
   }
 
@@ -81,8 +74,8 @@ const DockModal = (props) => {
     top: 'unset',
     width: isMobile ? '90%' : desktopDockWidth,
     height: isMobile ? '100%' : desktopDockHeight,
-    right: defaultdockPosX,
-    bottom: defaultdockPosY,
+    right: '10px',
+    bottom: '5px',
     borderRadius: '15px 15px 0px 0px',
     overflow: 'hidden',
     margin: isMobile ? 'auto' : 'unset'
@@ -98,8 +91,8 @@ const DockModal = (props) => {
     top: 'unset',
     width: minimDockWidth,
     height: minimDockHeight,
-    right: defaultdockPosX,
-    bottom: defaultdockPosY,
+    right: '10px',
+    bottom: '5px',
     borderRadius: '15px 15px 0px 0px',
     overflow: 'hidden',
     margin: isMobile ? 'auto' : 'unset'
@@ -225,7 +218,6 @@ const DockModal = (props) => {
 DockModal.defaultProps = {
   initalType: 'dock',
   headerName: 'New DockModal',
-  visible: true,
   bgcolor: 'black',
   fgcolor: 'white',
   fweight: 'bold',
@@ -235,9 +227,7 @@ DockModal.defaultProps = {
     minimWidth: '25%',
     minimHeight: '10%',
     modalWidth: '70%',
-    modalHeight: '650px',
-    dockPosX: '10px',
-    dockPosY: '5px'
+    modalHeight: '650px'
   }
 }
 
