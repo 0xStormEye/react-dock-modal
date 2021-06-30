@@ -11,7 +11,7 @@ var fi = require('react-icons/fi');
 var bs = require('react-icons/bs');
 var reactDeviceDetect = require('react-device-detect');
 
-var styles = {"dmPointer":"_styles-module__dmPointer__30XxJ","dmFill":"_styles-module__dmFill__2SuDt"};
+var styles = {"dmPointer":"_30XxJ","dmFill":"_2SuDt"};
 
 var DockModal = function DockModal(props) {
   var initalType = props.initalType,
@@ -42,6 +42,8 @@ var DockModal = function DockModal(props) {
   var minimDockHeight = '10%';
   var defaultModalWidth = '70%';
   var defaultModalHeight = '650px';
+  var defaultdockPosX = '10px';
+  var defaultdockPosY = '5px';
 
   if (params) {
     var dockWidth = params.dockWidth,
@@ -50,16 +52,16 @@ var DockModal = function DockModal(props) {
         minimHeight = params.minimHeight,
         modalWidth = params.modalWidth,
         modalHeight = params.modalHeight,
-        _dockPosX = params.dockPosX,
-        _dockPosY = params.dockPosY;
+        dockPosX = params.dockPosX,
+        dockPosY = params.dockPosY;
     desktopDockWidth = dockWidth || desktopDockWidth;
     desktopDockHeight = dockHeight || desktopDockHeight;
     minimDockWidth = minimWidth || minimDockWidth;
     minimDockHeight = minimHeight || minimDockHeight;
     defaultModalWidth = modalWidth || defaultModalWidth;
     defaultModalHeight = modalHeight || defaultModalHeight;
-    defaultdockPosX = _dockPosX || defaultdockPosX;
-    defaultdockPosY = _dockPosY || defaultdockPosY;
+    defaultdockPosX = dockPosX || defaultdockPosX;
+    defaultdockPosY = dockPosY || defaultdockPosY;
   }
 
   var defaultModalStyles = {

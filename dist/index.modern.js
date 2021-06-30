@@ -8,64 +8,69 @@ import { FiMaximize2 } from 'react-icons/fi';
 import { BsBoxArrowInDown } from 'react-icons/bs';
 import { isMobile } from 'react-device-detect';
 
-var styles = {"dmPointer":"_styles-module__dmPointer__30XxJ","dmFill":"_styles-module__dmFill__2SuDt"};
+var styles = {"dmPointer":"_30XxJ","dmFill":"_2SuDt"};
 
-const DockModal = props => {
-  const {
-    initalType,
-    headerName,
-    visible,
-    bgcolor,
-    fgcolor,
-    fweight,
-    children,
-    params
-  } = props;
-  const [type, setType] = useState(initalType);
-  const [isVisible, toggleVisibility] = useState(visible);
-  const headerStyle = {
+var DockModal = function DockModal(props) {
+  var initalType = props.initalType,
+      headerName = props.headerName,
+      visible = props.visible,
+      bgcolor = props.bgcolor,
+      fgcolor = props.fgcolor,
+      fweight = props.fweight,
+      children = props.children,
+      params = props.params;
+
+  var _useState = useState(initalType),
+      type = _useState[0],
+      setType = _useState[1];
+
+  var _useState2 = useState(visible),
+      isVisible = _useState2[0],
+      toggleVisibility = _useState2[1];
+
+  var headerStyle = {
     backgroundColor: bgcolor || 'black',
     color: fgcolor || 'white',
     fontWeight: fweight || 'bold'
   };
-  let desktopDockWidth = '40%';
-  let desktopDockHeight = '70%';
-  let minimDockWidth = '25%';
-  let minimDockHeight = '10%';
-  let defaultModalWidth = '70%';
-  let defaultModalHeight = '650px';
+  var desktopDockWidth = '40%';
+  var desktopDockHeight = '70%';
+  var minimDockWidth = '25%';
+  var minimDockHeight = '10%';
+  var defaultModalWidth = '70%';
+  var defaultModalHeight = '650px';
+  var defaultdockPosX = '10px';
+  var defaultdockPosY = '5px';
 
   if (params) {
-    const {
-      dockWidth,
-      dockHeight,
-      minimWidth,
-      minimHeight,
-      modalWidth,
-      modalHeight,
-      dockPosX: _dockPosX,
-      dockPosY: _dockPosY
-    } = params;
+    var dockWidth = params.dockWidth,
+        dockHeight = params.dockHeight,
+        minimWidth = params.minimWidth,
+        minimHeight = params.minimHeight,
+        modalWidth = params.modalWidth,
+        modalHeight = params.modalHeight,
+        dockPosX = params.dockPosX,
+        dockPosY = params.dockPosY;
     desktopDockWidth = dockWidth || desktopDockWidth;
     desktopDockHeight = dockHeight || desktopDockHeight;
     minimDockWidth = minimWidth || minimDockWidth;
     minimDockHeight = minimHeight || minimDockHeight;
     defaultModalWidth = modalWidth || defaultModalWidth;
     defaultModalHeight = modalHeight || defaultModalHeight;
-    defaultdockPosX = _dockPosX || defaultdockPosX;
-    defaultdockPosY = _dockPosY || defaultdockPosY;
+    defaultdockPosX = dockPosX || defaultdockPosX;
+    defaultdockPosY = dockPosY || defaultdockPosY;
   }
 
-  const defaultModalStyles = {
+  var defaultModalStyles = {
     minWidth: defaultModalWidth,
     margin: 'auto',
     position: 'absolute',
-    float: 'left',
+    "float": 'left',
     left: '50%',
     top: '50%',
     transform: 'translate(-50%, -50%)'
   };
-  const dockStyles = {
+  var dockStyles = {
     position: 'fixed',
     zIndex: 1,
     boxShadow: '0 0 4px rgba(0, 0, 0, 0.3)',
@@ -80,7 +85,7 @@ const DockModal = props => {
     overflow: 'hidden',
     margin: isMobile ? 'auto' : 'unset'
   };
-  const minDockStyles = {
+  var minDockStyles = {
     position: 'fixed',
     zIndex: 1,
     boxShadow: '0 0 4px rgba(0, 0, 0, 0.3)',
@@ -122,10 +127,14 @@ const DockModal = props => {
       className: "float-right text-right"
     }, /*#__PURE__*/React.createElement(FaRegWindowMinimize, {
       className: styles.dmPointer,
-      onClick: e => setType('minim')
+      onClick: function onClick(e) {
+        return setType('minim');
+      }
     }), /*#__PURE__*/React.createElement(MdClose, {
       className: styles.dmPointer,
-      onClick: e => toggleVisibility(false)
+      onClick: function onClick(e) {
+        return toggleVisibility(false);
+      }
     }))), /*#__PURE__*/React.createElement("div", {
       className: "m-1"
     }, children));
@@ -155,10 +164,14 @@ const DockModal = props => {
       className: "float-right text-right"
     }, /*#__PURE__*/React.createElement(FiMaximize2, {
       className: styles.dmPointer,
-      onClick: e => setType('dock')
+      onClick: function onClick(e) {
+        return setType('dock');
+      }
     }), /*#__PURE__*/React.createElement(MdClose, {
       className: styles.dmPointer,
-      onClick: e => toggleVisibility(false)
+      onClick: function onClick(e) {
+        return toggleVisibility(false);
+      }
     }))), /*#__PURE__*/React.createElement("div", {
       hidden: true
     }, children));
@@ -189,13 +202,19 @@ const DockModal = props => {
       className: "float-right text-right"
     }, /*#__PURE__*/React.createElement(FaRegWindowMinimize, {
       className: styles.dmPointer,
-      onClick: e => setType('minim')
+      onClick: function onClick(e) {
+        return setType('minim');
+      }
     }), /*#__PURE__*/React.createElement(BsBoxArrowInDown, {
       className: styles.dmPointer,
-      onClick: e => setType('dock')
+      onClick: function onClick(e) {
+        return setType('dock');
+      }
     }), /*#__PURE__*/React.createElement(MdClose, {
       className: styles.dmPointer,
-      onClick: e => toggleVisibility(false)
+      onClick: function onClick(e) {
+        return toggleVisibility(false);
+      }
     }))), /*#__PURE__*/React.createElement("div", {
       className: "m-1"
     }, children)));

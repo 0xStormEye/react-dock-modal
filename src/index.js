@@ -36,8 +36,8 @@ const DockModal = (props) => {
   let minimDockHeight = '10%'
   let defaultModalWidth = '70%'
   let defaultModalHeight = '650px'
-  let dockPosX = '10px'
-  let dockPosY = '5px'
+  let defaultdockPosX = '10px'
+  let defaultdockPosY = '5px'
 
   if (params) {
     const {
