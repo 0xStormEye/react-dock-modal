@@ -13,6 +13,7 @@ const DockModal = (props) => {
   const {
     initalType,
     headerName,
+    visible,
     bgcolor,
     fgcolor,
     fweight,
@@ -20,7 +21,7 @@ const DockModal = (props) => {
     params
   } = props
   const [type, setType] = useState(initalType)
-  const [isVisible, toggleVisibility] = useState(true)
+  const [isVisible, toggleVisibility] = useState(visible)
 
   // Header Style
   const headerStyle = {
@@ -35,6 +36,8 @@ const DockModal = (props) => {
   let minimDockHeight = '10%'
   let defaultModalWidth = '70%'
   let defaultModalHeight = '650px'
+  let dockPosX = '10px'
+  let dockPosY = '5px'
 
   if (params) {
     const {
@@ -43,7 +46,9 @@ const DockModal = (props) => {
       minimWidth,
       minimHeight,
       modalWidth,
-      modalHeight
+      modalHeight,
+      dockPosX,
+      dockPosY
     } = params
     desktopDockWidth = dockWidth || desktopDockWidth
     desktopDockHeight = dockHeight || desktopDockHeight
@@ -51,6 +56,9 @@ const DockModal = (props) => {
     minimDockHeight = minimHeight || minimDockHeight
     defaultModalWidth = modalWidth || defaultModalWidth
     defaultModalHeight = modalHeight || defaultModalHeight
+    defaultdockPosX = dockPosX || defaultdockPosX
+    defaultdockPosY = dockPosY || defaultdockPosY
+
   }
 
   const defaultModalStyles = {
@@ -73,8 +81,8 @@ const DockModal = (props) => {
     top: 'unset',
     width: isMobile ? '90%' : desktopDockWidth,
     height: isMobile ? '100%' : desktopDockHeight,
-    right: '10px',
-    bottom: '5px',
+    right: defaultdockPosX,
+    bottom: defaultdockPosY,
     borderRadius: '15px 15px 0px 0px',
     overflow: 'hidden',
     margin: isMobile ? 'auto' : 'unset'
@@ -90,8 +98,8 @@ const DockModal = (props) => {
     top: 'unset',
     width: minimDockWidth,
     height: minimDockHeight,
-    right: '10px',
-    bottom: '5px',
+    right: defaultdockPosX,
+    bottom: defaultdockPosY,
     borderRadius: '15px 15px 0px 0px',
     overflow: 'hidden',
     margin: isMobile ? 'auto' : 'unset'
@@ -126,11 +134,11 @@ const DockModal = (props) => {
             {/* <FaWindowMaximize
               className={styles.dmPointer}
               onClick={(e) => setType('modal')}
-            />
+            /> */}
             <MdClose
               className={styles.dmPointer}
               onClick={(e) => toggleVisibility(false)}
-            /> */}
+            />
           </Col>
         </Row>
         <div className='m-1'>{children}</div>
@@ -165,11 +173,11 @@ const DockModal = (props) => {
             {/* <FaWindowMaximize
               className={styles.dmPointer}
               onClick={(e) => setType('modal')}
-            />
+            /> */}
             <MdClose
               className={styles.dmPointer}
               onClick={(e) => toggleVisibility(false)}
-            /> */}
+            />
           </Col>
         </Row>
         <div hidden>{children}</div>
@@ -217,6 +225,7 @@ const DockModal = (props) => {
 DockModal.defaultProps = {
   initalType: 'dock',
   headerName: 'New DockModal',
+  visible: true,
   bgcolor: 'black',
   fgcolor: 'white',
   fweight: 'bold',
@@ -226,7 +235,9 @@ DockModal.defaultProps = {
     minimWidth: '25%',
     minimHeight: '10%',
     modalWidth: '70%',
-    modalHeight: '650px'
+    modalHeight: '650px',
+    dockPosX: '10px',
+    dockPosY: '5px'
   }
 }
 

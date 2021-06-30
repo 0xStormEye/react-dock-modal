@@ -13,6 +13,7 @@ var styles = {"dmPointer":"_30XxJ","dmFill":"_2SuDt"};
 var DockModal = function DockModal(props) {
   var initalType = props.initalType,
       headerName = props.headerName,
+      visible = props.visible,
       bgcolor = props.bgcolor,
       fgcolor = props.fgcolor,
       fweight = props.fweight,
@@ -23,7 +24,7 @@ var DockModal = function DockModal(props) {
       type = _useState[0],
       setType = _useState[1];
 
-  var _useState2 = useState(true),
+  var _useState2 = useState(visible),
       isVisible = _useState2[0],
       toggleVisibility = _useState2[1];
 
@@ -45,13 +46,17 @@ var DockModal = function DockModal(props) {
         minimWidth = params.minimWidth,
         minimHeight = params.minimHeight,
         modalWidth = params.modalWidth,
-        modalHeight = params.modalHeight;
+        modalHeight = params.modalHeight,
+        _dockPosX = params.dockPosX,
+        _dockPosY = params.dockPosY;
     desktopDockWidth = dockWidth || desktopDockWidth;
     desktopDockHeight = dockHeight || desktopDockHeight;
     minimDockWidth = minimWidth || minimDockWidth;
     minimDockHeight = minimHeight || minimDockHeight;
     defaultModalWidth = modalWidth || defaultModalWidth;
     defaultModalHeight = modalHeight || defaultModalHeight;
+    defaultdockPosX = _dockPosX || defaultdockPosX;
+    defaultdockPosY = _dockPosY || defaultdockPosY;
   }
 
   var defaultModalStyles = {
@@ -72,8 +77,8 @@ var DockModal = function DockModal(props) {
     top: 'unset',
     width: isMobile ? '90%' : desktopDockWidth,
     height: isMobile ? '100%' : desktopDockHeight,
-    right: '10px',
-    bottom: '5px',
+    right: defaultdockPosX,
+    bottom: defaultdockPosY,
     borderRadius: '15px 15px 0px 0px',
     overflow: 'hidden',
     margin: isMobile ? 'auto' : 'unset'
@@ -87,8 +92,8 @@ var DockModal = function DockModal(props) {
     top: 'unset',
     width: minimDockWidth,
     height: minimDockHeight,
-    right: '10px',
-    bottom: '5px',
+    right: defaultdockPosX,
+    bottom: defaultdockPosY,
     borderRadius: '15px 15px 0px 0px',
     overflow: 'hidden',
     margin: isMobile ? 'auto' : 'unset'
@@ -123,6 +128,11 @@ var DockModal = function DockModal(props) {
       onClick: function onClick(e) {
         return setType('minim');
       }
+    }), /*#__PURE__*/React.createElement(MdClose, {
+      className: styles.dmPointer,
+      onClick: function onClick(e) {
+        return toggleVisibility(false);
+      }
     }))), /*#__PURE__*/React.createElement("div", {
       className: "m-1"
     }, children));
@@ -154,6 +164,11 @@ var DockModal = function DockModal(props) {
       className: styles.dmPointer,
       onClick: function onClick(e) {
         return setType('dock');
+      }
+    }), /*#__PURE__*/React.createElement(MdClose, {
+      className: styles.dmPointer,
+      onClick: function onClick(e) {
+        return toggleVisibility(false);
       }
     }))), /*#__PURE__*/React.createElement("div", {
       hidden: true
@@ -209,6 +224,7 @@ var DockModal = function DockModal(props) {
 DockModal.defaultProps = {
   initalType: 'dock',
   headerName: 'New DockModal',
+  visible: true,
   bgcolor: 'black',
   fgcolor: 'white',
   fweight: 'bold',
@@ -218,7 +234,9 @@ DockModal.defaultProps = {
     minimWidth: '25%',
     minimHeight: '10%',
     modalWidth: '70%',
-    modalHeight: '650px'
+    modalHeight: '650px',
+    dockPosX: '10px',
+    dockPosY: '5px'
   }
 };
 
