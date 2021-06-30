@@ -37,7 +37,7 @@ const DockModal = (props) => {
   let defaultModalWidth = '70%'
   let defaultModalHeight = '650px'
   let defaultDockPosX = '10px'
-  let defaultDockPosY = '5px'
+
 
   if (params) {
     const {
@@ -47,8 +47,7 @@ const DockModal = (props) => {
       minimHeight,
       modalWidth,
       modalHeight,
-      dockPosX,
-      dockPosY
+      dockPosX
     } = params
     desktopDockWidth = dockWidth || desktopDockWidth
     desktopDockHeight = dockHeight || desktopDockHeight
@@ -57,7 +56,6 @@ const DockModal = (props) => {
     defaultModalWidth = modalWidth || defaultModalWidth
     defaultModalHeight = modalHeight || defaultModalHeight
     defaultDockPosX = dockPosX || defaultDockPosX
-    defaultDockPosY = dockPosY || defaultDockPosY
 
   }
 
@@ -82,7 +80,7 @@ const DockModal = (props) => {
     width: isMobile ? '90%' : desktopDockWidth,
     height: isMobile ? '100%' : desktopDockHeight,
     right: defaultDockPosX,
-    bottom: defaultDockPosY,
+    bottom: '5px',
     borderRadius: '15px 15px 0px 0px',
     overflow: 'hidden',
     margin: isMobile ? 'auto' : 'unset'
@@ -99,7 +97,7 @@ const DockModal = (props) => {
     width: minimDockWidth,
     height: minimDockHeight,
     right: defaultDockPosX,
-    bottom: defaultDockPosY,
+    bottom: '5px',
     borderRadius: '15px 15px 0px 0px',
     overflow: 'hidden',
     margin: isMobile ? 'auto' : 'unset'
@@ -135,10 +133,10 @@ const DockModal = (props) => {
               className={styles.dmPointer}
               onClick={(e) => setType('modal')}
             /> */}
-            <MdClose
+            {/* <MdClose
               className={styles.dmPointer}
               onClick={(e) => toggleVisibility(false)}
-            />
+            /> */}
           </Col>
         </Row>
         <div className='m-1'>{children}</div>
@@ -174,10 +172,10 @@ const DockModal = (props) => {
               className={styles.dmPointer}
               onClick={(e) => setType('modal')}
             /> */}
-            <MdClose
+            {/* <MdClose
               className={styles.dmPointer}
               onClick={(e) => toggleVisibility(false)}
-            />
+            /> */}
           </Col>
         </Row>
         <div hidden>{children}</div>
@@ -236,8 +234,7 @@ DockModal.defaultProps = {
     minimHeight: '10%',
     modalWidth: '70%',
     modalHeight: '650px',
-    dockPosX: '10px',
-    dockPosY: '5px'
+    dockPosX: '10px'
   }
 }
 

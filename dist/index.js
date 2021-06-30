@@ -43,7 +43,6 @@ var DockModal = function DockModal(props) {
   var defaultModalWidth = '70%';
   var defaultModalHeight = '650px';
   var defaultDockPosX = '10px';
-  var defaultDockPosY = '5px';
 
   if (params) {
     var dockWidth = params.dockWidth,
@@ -52,8 +51,7 @@ var DockModal = function DockModal(props) {
         minimHeight = params.minimHeight,
         modalWidth = params.modalWidth,
         modalHeight = params.modalHeight,
-        dockPosX = params.dockPosX,
-        dockPosY = params.dockPosY;
+        dockPosX = params.dockPosX;
     desktopDockWidth = dockWidth || desktopDockWidth;
     desktopDockHeight = dockHeight || desktopDockHeight;
     minimDockWidth = minimWidth || minimDockWidth;
@@ -61,7 +59,6 @@ var DockModal = function DockModal(props) {
     defaultModalWidth = modalWidth || defaultModalWidth;
     defaultModalHeight = modalHeight || defaultModalHeight;
     defaultDockPosX = dockPosX || defaultDockPosX;
-    defaultDockPosY = dockPosY || defaultDockPosY;
   }
 
   var defaultModalStyles = {
@@ -83,7 +80,7 @@ var DockModal = function DockModal(props) {
     width: reactDeviceDetect.isMobile ? '90%' : desktopDockWidth,
     height: reactDeviceDetect.isMobile ? '100%' : desktopDockHeight,
     right: defaultDockPosX,
-    bottom: defaultDockPosY,
+    bottom: '5px',
     borderRadius: '15px 15px 0px 0px',
     overflow: 'hidden',
     margin: reactDeviceDetect.isMobile ? 'auto' : 'unset'
@@ -98,7 +95,7 @@ var DockModal = function DockModal(props) {
     width: minimDockWidth,
     height: minimDockHeight,
     right: defaultDockPosX,
-    bottom: defaultDockPosY,
+    bottom: '5px',
     borderRadius: '15px 15px 0px 0px',
     overflow: 'hidden',
     margin: reactDeviceDetect.isMobile ? 'auto' : 'unset'
@@ -133,11 +130,6 @@ var DockModal = function DockModal(props) {
       onClick: function onClick(e) {
         return setType('minim');
       }
-    }), /*#__PURE__*/React__default.createElement(md.MdClose, {
-      className: styles.dmPointer,
-      onClick: function onClick(e) {
-        return toggleVisibility(false);
-      }
     }))), /*#__PURE__*/React__default.createElement("div", {
       className: "m-1"
     }, children));
@@ -169,11 +161,6 @@ var DockModal = function DockModal(props) {
       className: styles.dmPointer,
       onClick: function onClick(e) {
         return setType('dock');
-      }
-    }), /*#__PURE__*/React__default.createElement(md.MdClose, {
-      className: styles.dmPointer,
-      onClick: function onClick(e) {
-        return toggleVisibility(false);
       }
     }))), /*#__PURE__*/React__default.createElement("div", {
       hidden: true
@@ -240,8 +227,7 @@ DockModal.defaultProps = {
     minimHeight: '10%',
     modalWidth: '70%',
     modalHeight: '650px',
-    dockPosX: '10px',
-    dockPosY: '5px'
+    dockPosX: '10px'
   }
 };
 
