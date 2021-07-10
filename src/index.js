@@ -81,7 +81,6 @@ const DockModal = (props) => {
     height: isMobile ? '100%' : desktopDockHeight,
     right: defaultDockPosX,
     bottom: '5px',
-    borderRadius: '15px 15px 0px 0px',
     overflow: 'hidden',
     margin: isMobile ? 'auto' : 'unset'
   }
@@ -98,7 +97,6 @@ const DockModal = (props) => {
     height: minimDockHeight,
     right: defaultDockPosX,
     bottom: '5px',
-    borderRadius: '15px 15px 0px 0px',
     overflow: 'hidden',
     margin: isMobile ? 'auto' : 'unset'
   }
