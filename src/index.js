@@ -17,6 +17,7 @@ const DockModal = (props) => {
     bgcolor,
     fgcolor,
     fweight,
+    headerHeight,
     children,
     params
   } = props
@@ -27,7 +28,8 @@ const DockModal = (props) => {
   const headerStyle = {
     backgroundColor: bgcolor || 'black',
     color: fgcolor || 'white',
-    fontWeight: fweight || 'bold'
+    fontWeight: fweight || 'bold',
+    height: headerHeight || 30
   }
 
   let desktopDockWidth = '40%'
